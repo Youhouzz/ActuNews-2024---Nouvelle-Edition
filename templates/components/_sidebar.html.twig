@@ -1,0 +1,32 @@
+<aside class="blog-sidebar">
+    <div class="widget sidebar-widget widget_categories">
+        <h4 class="widget-title">Catégories</h4>
+        <ul class="list-wrap">
+            {% for category in categories %}
+                <li>
+                    <a href="{{ path('default_category', {'slug': category.slug}) }}">
+                        {{ category.name }}
+                    </a>
+                    <span class="float-right">({{ categoryPostCounts[category.name] }})</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="widget sidebar-widget widget_categories">
+        <h4 class="widget-title">Articles récents</h4>
+        <ul class="list-wrap">
+            {% for post in posts %}
+                <li>
+                    <a href="{{ path('default_post', {
+                        'slug': post.slug,
+                        'category': post.categories[0].slug
+                    }) }}">
+                        <img src="{{ asset('uploads/posts/' ~ post.image) }}" alt="{{ post.title }}">
+                        {{ post.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</aside>

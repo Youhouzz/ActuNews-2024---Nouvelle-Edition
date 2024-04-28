@@ -26,7 +26,6 @@ class PostController extends AbstractController
         # Création d'un Post
         $post = new Post();
         $post->setCreatedAt(new \DateTimeImmutable());
-        $post->setPublishedAt(new \DateTimeImmutable());
         $post->setUpdatedAt(new \DateTimeImmutable());
 
         # Récupération de l'utilisateur connecté en session
@@ -79,7 +78,7 @@ class PostController extends AbstractController
 
             # Redirection vers l'article
             return $this->redirectToRoute('default_post', [
-               'category' => $post->getCategories()[0]->getSlug(),
+                'category' => $post->getCategories()[0]->getSlug(),
                 'slug' => $post->getSlug()
             ]);
 
