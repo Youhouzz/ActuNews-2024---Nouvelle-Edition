@@ -57,7 +57,11 @@ class DefaultController extends AbstractController
      * CONSIGNE : Créée la route permet d'afficher un article.
      * ex. https://localhost:8000/categorie/alias
      */
+<<<<<<< HEAD
     #[Route('/{category}/{slug}', name: 'default_post', methods: ['GET'])]
+=======
+    #[Route('/{category}/{slug}.html', name: 'default_post', methods: ['GET'])]
+>>>>>>> 01b70c588d287033252263c804b8b8175967d92b
     public function post(Post $post): Response
     {
         return $this->render('default/post.html.twig', [

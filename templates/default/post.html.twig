@@ -78,6 +78,7 @@
                 </div>
                 <!-- SIDEBAR -->
                 <div class="col-xl-3 col-lg-4 col-md-6">
+<<<<<<< HEAD
                     <aside class="blog-sidebar">
                         <div class="widget sidebar-widget widget_categories">
                             <h4 class="widget-title">Nos catégories</h4>
@@ -140,6 +141,13 @@
                             </div>
                         </div>
                     </aside>
+=======
+                    <div class="thumb">
+                        {{ render(controller(
+                            'App\\Controller\\RenderController::renderSidebar', {max: 3}
+                        )) }}
+                    </div>
+>>>>>>> 01b70c588d287033252263c804b8b8175967d92b
                 </div>
             </div>
         </div>
